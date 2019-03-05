@@ -4,7 +4,7 @@
 		<script src="https://demo.docusign.net/clickapi/sdk/latest/docusign-click.js"></script>
 		<script>
 		function submit(){
-			var email = document.getElementById('button');
+			var email = document.getElementById('email');
 			alert("email is" + email);
 			if(email !== null) {
 				docuSignClick.Clickwrap.render({
@@ -16,7 +16,7 @@
 			}
 		}
 		function init(){
-			document.getElementById('signup').onsubmit = submit;
+			document.getElementById('button').onsubmit = submit;
 		}
 		window.onload = init;	
 		</script>
@@ -24,7 +24,7 @@
 	<body>
 		<form id="signup" target="https://github.com/nosoupforyou123/docusignclick/blob/master/testclick.html">
 		  Email:<br>
-		  <input type="email" name="email" /><br />
+		  <input id="email" type="email" name="email" /><br />
 		  <input id="button" type="submit" value="Signup" />
 		</form>
 		<div id="ds-terms-of-service"></div>
