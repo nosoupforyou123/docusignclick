@@ -1,20 +1,32 @@
 <html>
 	<head>
 		<title>Randomiser Terms and Conditions</title>
+		<script src="https://demo.docusign.net/clickapi/sdk/latest/docusign-click.js"></script>
+		<script>
+		function submit(){
+			var email = document.getElementById('button');
+			alert("email is" + email);
+			if(email !== null) {
+				docuSignClick.Clickwrap.render({
+				environment: 'https://demo.docusign.net',
+				accountId: '758b1a27-b56f-4d79-9c96-e9edfcd4bf85',
+				clickwrapId: '200e5573-e0b5-4497-bc04-95bd9bf8b583',
+				clientUserId: email,
+			  }, '#ds-terms-of-service');
+			}
+		}
+		function init(){
+			document.getElementById('signup').onsubmit = submit;
+		}
+		window.onload = init;	
+		</script>
 	</head>
 	<body>
-		<form target="_self">
+		<form id="signup" target="https://github.com/nosoupforyou123/docusignclick/blob/master/testclick.html">
 		  Email:<br>
 		  <input type="email" name="email" /><br />
-		  <input type="submit" value="Signup" />
+		  <input id="button" type="submit" value="Signup" />
 		</form>
 		<div id="ds-terms-of-service"></div>
-		<script src="https://demo.docusign.net/clickapi/sdk/latest/docusign-click.js"></script>
-		<script>docuSignClick.Clickwrap.render({
-			environment: 'https://demo.docusign.net',
-			accountId: '758b1a27-b56f-4d79-9c96-e9edfcd4bf85',
-			clickwrapId: '200e5573-e0b5-4497-bc04-95bd9bf8b583',
-			clientUserId: 'UNIQUE_USER_ID'
-		  }, '#ds-terms-of-service');</script>
 	 </body> 
  </html>
