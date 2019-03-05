@@ -16,13 +16,13 @@
 			}
 		}
 		function init(){
-			document.getElementById('button').onsubmit = submit;
+			document.getElementById('button').onsubmit = submit();
 		}
-		window.onload = init;	
+		window.onload = init();	
 		</script>
 	</head>
 	<body>
-		<form id="signup" target="https://github.com/nosoupforyou123/docusignclick/blob/master/testclick.html">
+		<form id="signup" onsubmit="submit()">
 		  Email:<br>
 		  <input id="email" type="email" name="email" /><br />
 		  <input id="button" type="submit" value="Signup" />
